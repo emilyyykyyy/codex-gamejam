@@ -16,6 +16,41 @@ export class Game extends Scene
 
 
 
+        ///////// Create custom cursor /////////
+        this.input.setDefaultCursor('url(assets/ui/cursors/defaultCur.png), pointer');
+
+        // Loads cursor select options and cursor urls
+        let handIcon = this.add.sprite(74, 69, 'handIcon').setInteractive().setTint(0xB9957E);
+        let ragIcon = this.add.sprite(75, 175, 'ragIcon').setInteractive().setTint(0x8d8e8f);
+        let mopIcon = this.add.sprite(75, 282, 'mopIcon').setInteractive().setTint(0x8d8e8f);
+
+        const clickTool = (toolName) => {
+            if (toolName === 'hand') {
+                this.input.setDefaultCursor('url(assets/ui/cursors/handCur.png), pointer');
+                
+            }
+            else if (toolName === 'rag') {
+                this.input.setDefaultCursor('url(assets/ui/cursors/ragCur.png), pointer');
+            }
+            else { // By assumption, tool is mop
+                this.input.setDefaultCursor('url(assets/ui/cursors/mopCur.png), pointer');
+            }
+            /*this.disableInteractive();
+            floorSFX.play();
+            spriteShake(this.scene, this, 0.33, () => {
+                floorElementCount++;
+                floorTextCount.setText('(' + floorElementCount + '/4)');
+                this.destroy();
+                updateComplete(floorElementCount, 4, floorTodo, floorTextCount);
+            });*/
+        }
+
+        handIcon.on('pointerdown', () => clickTool('hand'));
+        ragIcon.on('pointerdown', () => clickTool('rag'));
+        mopIcon.on('pointerdown', () => clickTool('mop'));
+
+
+
         ///////// Create SFX /////////
         let floorSFX = this.sound.add('floor-sweep');
         let tableSFX = this.sound.add('table-wipe');
@@ -73,7 +108,7 @@ export class Game extends Scene
         ///////// Create obstacles /////////
         //// Load images
         let counterspill1 = this.add.sprite(659, 412, 'counterspill1').setInteractive();
-        let counterdirtyplate1 = this.add.sprite(685, 427, 'counterdirtyplate1').setInteractive();
+        let counterdirtyplate1 = this.add.sprite(685, 420, 'counterdirtyplate1').setInteractive();
         let tablespill1 = this.add.sprite(565, 506, 'tablespill1').setInteractive();
         let tablespill2 = this.add.sprite(377, 414, 'tablespill2').setInteractive();
         let dirtyplate1 = this.add.sprite(744, 508, 'dirtyplate1').setInteractive();

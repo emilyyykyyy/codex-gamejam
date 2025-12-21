@@ -40,6 +40,9 @@ export class Preloader extends Scene
 
         // UI
         this.load.image('todo-box', 'ui/todo-box.png');
+        this.load.image('handIcon', 'ui/icons/handicon.png');
+        this.load.image('ragIcon', 'ui/icons/ragicon.png');
+        this.load.image('mopIcon', 'ui/icons/mopicon.png');
 
         // SFX
         this.load.audio('dish-clink', 'sfx/dish-clink.mp3');
