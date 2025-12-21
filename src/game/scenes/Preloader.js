@@ -58,6 +58,7 @@ export class Preloader extends Scene
         this.load.image('tablespill2', 'obstacles/tablespill2.png');
         this.load.image('wetspill1', 'obstacles/wetspill1.png');
         this.load.image('wetspill2', 'obstacles/wetspill2.png');
+        this.load.image('windowspill', 'obstacles/windowspill.png');
     }
 
     create ()
