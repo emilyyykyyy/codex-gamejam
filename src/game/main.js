@@ -3,7 +3,9 @@ import { BadEnd } from './scenes/BadEnd';
 import { Game as MainGame } from './scenes/Game';
 import { GameComplete } from './scenes/GameComplete';
 import { GoodEnd } from './scenes/GoodEnd'
+import { Instructions } from './scenes/Instructions';
 import { MainMenu } from './scenes/MainMenu';
+import { Opening } from './scenes/Opening';
 import { Preloader } from './scenes/Preloader';
 import { AUTO, Game } from 'phaser';
 
@@ -27,6 +29,8 @@ const config = {
         GameComplete,
         GoodEnd,
         BadEnd,
+        Instructions,
+        Opening,
     ]
 };
 

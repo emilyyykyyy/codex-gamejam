@@ -45,7 +45,7 @@ export class GameComplete extends Scene
         this.input.once('pointerdown', () => {
             this.input.enabled = false;
 
-            this.cameras.main.fadeOut(1000);
+            this.cameras.main.fadeOut(500);
             this.cameras.main.once('camerafadeoutcomplete', () => {
                 this.scene.stop('Game'); // Remove Game
                 if (this.completeTasks == true) {

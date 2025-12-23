@@ -14,7 +14,7 @@ export class BadEnd extends Scene
 
     create ()
     {
-        this.cameras.main.fadeIn(500);
+        this.cameras.main.fadeIn(1000);
         this.sys.game.canvas.style.cursor = 'url(assets/ui/cursors/defaultCur.png) 0 0, auto';
 
         ///////// Create Background + Textbox /////////
@@ -25,6 +25,8 @@ export class BadEnd extends Scene
         
 
         ///////// Create SFX /////////
+        let music = this.sound.add("failure-sound");
+        music.play();
         
 
 

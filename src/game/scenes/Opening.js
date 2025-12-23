@@ -1,32 +1,28 @@
 import { Scene } from 'phaser';
 
-export class GoodEnd extends Scene
+export class Opening extends Scene
 {
     constructor ()
     {
-        super('GoodEnd');
+        super('Opening');
     }
 
     init(data) {
         this.badEndFound = data.badEndFound;
-        this.goodEndFound = true;
+        this.goodEndFound = data.goodEndFound;
     }
 
-    create ()
+    create () 
     {
         this.cameras.main.fadeIn(1000);
         this.sys.game.canvas.style.cursor = 'url(assets/ui/cursors/defaultCur.png) 0 0, auto';
 
         ///////// Create Background + Textbox /////////
-        let cg = this.add.image(512, 384, 'cg-goodend');
+        this.add.image(512, 384, 'bg-dark');
         let textbox = this.add.image(512, 644, 'text-box');
         let arrownext = this.add.image(943, 720, 'arrow-next');
         let arrowStart = false; // use later so animation doesn't play on repeat
-        
 
-        ///////// Create SFX /////////
-        let music = this.sound.add("success-sound");
-        music.play();
 
 
         ///////// Create text w/ typewriter effect /////////\
@@ -37,7 +33,7 @@ export class GoodEnd extends Scene
 
         let finishedTyping = false;
 
-        let message = `You cleaned the whole place so quickly, you got employee of\nthe month and a 0.01% raise!\n\nGood End (Found ${endingsFound.toString()}/2 endings).`;
+        let message = `After a long shift at your minimum wage cafe job, you're\nready to clock out... until your boss requests the cafe to be\nfully clean by the time your shift is over. \nThe only issue is that the cafe is a complete mess..!`;
         let typedText = this.add.text(512, 636, 
             '', {
             fontFamily: 'qtpi', fontSize: 40, color: '#464248',
@@ -86,7 +82,7 @@ export class GoodEnd extends Scene
                 this.input.enabled = false;
                 this.cameras.main.fadeOut(250);
                 this.cameras.main.once('camerafadeoutcomplete', () => {
-                    this.scene.start('MainMenu', {
+                    this.scene.start('Instructions', {
                         badEndFound: this.badEndFound,
                         goodEndFound: this.goodEndFound,
                     });

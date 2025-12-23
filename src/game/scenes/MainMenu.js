@@ -8,29 +8,33 @@ export class MainMenu extends Scene
     }
 
     init(data) {
-        this.badEndFound = true;
+        this.badEndFound = data.badEndFound;
         this.goodEndFound = data.goodEndFound;
     }
 
     create ()
     {
-        console.log('switched');
+        this.sys.game.canvas.style.cursor = 'url(assets/ui/cursors/defaultCur.png) 0 0, auto';
         this.input.enabled = true;
         this.cameras.main.fadeIn(250);
-        this.add.image(512, 384, 'background');
+        this.add.image(512, 384, 'cg-opening');
 
-        this.add.image(512, 300, 'logo');
-
-        this.add.text(512, 460, 'Main Menu', {
-            fontFamily: 'Arial Black', fontSize: 38, color: '#ffffff',
-            stroke: '#000000', strokeThickness: 8,
-            align: 'center'
-        }).setOrigin(0.5);
-
-        this.input.once('pointerdown', () => {
-
-            this.scene.start('Game');
-
+        this.input.on('pointerdown', () => {
+            this.cameras.main.fadeOut(250);
+            this.cameras.main.once('camerafadeoutcomplete', () => {
+                if (this.badEndFound || this.goodEndFound) {
+                    this.scene.start('Game', {
+                        badEndFound: this.badEndFound,
+                        goodEndFound: this.goodEndFound,
+                    });
+                }
+                else {
+                    this.scene.start('Opening', {
+                        badEndFound: this.badEndFound,
+                        goodEndFound: this.goodEndFound,
+                    });
+                }
+            });
         });
     }
 }
