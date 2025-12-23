@@ -19,7 +19,12 @@ export class Game extends Scene
 
         ///////// Create background /////////
         this.cameras.main.setBackgroundColor(0x808080);
-        this.add.image(512, 384, 'bg-cafe');
+        if (this.goodEndFound) {
+            this.add.image(512, 384, 'bg-cafe-good');
+        }
+        else {
+            this.add.image(512, 384, 'bg-cafe');
+        }
 
 
         

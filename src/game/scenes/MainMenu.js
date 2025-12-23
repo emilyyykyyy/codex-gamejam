@@ -23,7 +23,7 @@ export class MainMenu extends Scene
             this.cameras.main.fadeOut(250);
             this.cameras.main.once('camerafadeoutcomplete', () => {
                 if (this.badEndFound || this.goodEndFound) {
-                    this.scene.start('Game', {
+                    this.scene.start('Instructions', {
                         badEndFound: this.badEndFound,
                         goodEndFound: this.goodEndFound,
                     });

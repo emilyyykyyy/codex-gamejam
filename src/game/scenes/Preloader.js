@@ -18,7 +18,7 @@ export class Preloader extends Scene
         this.add.rectangle(512, 384, 468, 32).setStrokeStyle(3, 0x464248);
 
         //  This is the progress bar itself. It will increase in size from the left based on the % of progress.
-        const bar = this.add.rectangle(512-230, 384, 4, 28, 0xffffff);
+        const bar = this.add.rectangle(512-230, 384, 4, 28, 0xCF745A);
 
         //  Use the 'progress' event emitted by the LoaderPlugin to update the loading bar
         this.load.on('progress', (progress) => {
@@ -37,6 +37,7 @@ export class Preloader extends Scene
 
         // Backgrounds/CGs
         this.load.image('bg-cafe', 'bgs/bg-cafe.png');
+        this.load.image('bg-cafe-good', 'bgs/bg-cafe-good.png');
         this.load.image('bg-dark', 'bgs/bg-dark.png');
         this.load.image('cg-badend', 'bgs/cg-badend.png');
         this.load.image('cg-goodend', 'bgs/cg-goodend.png');
