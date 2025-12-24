@@ -4,6 +4,7 @@ A short, Phaser point and click game about cleaning up a cafe. Wipe down some ta
 
 Made for [Codedex's December 2025 Challenge: Game Jam](https://kol-07.itch.io/closing-cleanup)!
 
+---
 
 
 ### HOW TO PLAY: 
@@ -15,6 +16,11 @@ Made for [Codedex's December 2025 Challenge: Game Jam](https://kol-07.itch.io/cl
 - Clean up 11 different messes
 - 2 unique endings
 - 3 CGS and many more sprites (all drawn by me, totaling to 37 total sprites)
+
+### WHAT I'VE LEARNED:
+- Learned Phaser from scratch in 1 week, teaching myself with Codedex, Phaser documentation + examples, and lots of random forums online!
+- Created my first game and experienced the game development process (planning, storyboarding, coding)!
+- Illustrating with limited colors and different perspectives, in addition to dawing sprites.
 
 
 ### CREDITS:
